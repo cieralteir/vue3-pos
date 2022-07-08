@@ -1,13 +1,9 @@
-<template>
-  <header>
-    VUE3 POS
-  </header>
-
-  <main>
-    <router-view />
-  </main>
-</template>
-
 <script setup>
 
 </script>
+
+<template>
+  <main class="h-screen">
+    <router-view />
+  </main>
+</template>
