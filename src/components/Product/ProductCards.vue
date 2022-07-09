@@ -5,5 +5,9 @@ import ProductCard from "@/components/Product/ProductCard.vue";
 <template>
   <div class="flex flex-wrap gap-5">
     <ProductCard />
+    <ProductCard />
+    <ProductCard />
+    <ProductCard />
+    <ProductCard />
   </div>
 </template>
