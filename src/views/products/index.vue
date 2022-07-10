@@ -28,24 +28,30 @@ import ProductCards from "@/components/Product/ProductCards.vue";
     <div class="flex flex-col h-screen w-1/4 bg-gray-50 p-5">
       <h2 class="font-bold text-2xl mb-5">ORDERS</h2>
       <div class="grow flex flex-col gap-5">
-        <div class="grid grid-cols-3 w-full text-sm">
+        <div class="grid grid-cols-3 items-center w-full text-sm">
           <p class="font-bold">JIN RAMEN</p>
-          <div class="flex justify-center">
+          <div class="flex gap-3 items-center justify-center">
+            <button class="bg-gray-100 p-2 w-9 h-9 rounded-md">-</button>
             <p>2</p>
+            <button class="bg-gray-100 p-2 w-9 h-9 rounded-md">+</button>
           </div>
           <p class="font-bold text-gray-400 text-right">PHP 100.00</p>
         </div>
-        <div class="grid grid-cols-3 w-full text-sm">
+        <div class="grid grid-cols-3 items-center w-full text-sm">
           <p class="font-bold">PEPERO</p>
-          <div class="flex justify-center">
+          <div class="flex gap-3 items-center justify-center">
+            <button class="bg-gray-100 p-2 w-9 h-9 rounded-md">-</button>
             <p>1</p>
+            <button class="bg-gray-100 p-2 w-9 h-9 rounded-md">+</button>
           </div>
           <p class="font-bold text-gray-400 text-right">PHP 50.00</p>
         </div>
-        <div class="grid grid-cols-3 w-full text-sm">
+        <div class="grid grid-cols-3 items-center w-full text-sm">
           <p class="font-bold">BINGGRAE BANANA MILK</p>
-          <div class="flex justify-center">
+          <div class="flex gap-3 items-center justify-center">
+            <button class="bg-gray-100 p-2 w-9 h-9 rounded-md">-</button>
             <p>3</p>
+            <button class="bg-gray-100 p-2 w-9 h-9 rounded-md">+</button>
           </div>
           <p class="font-bold text-gray-400 text-right">PHP 150.00</p>
         </div>
