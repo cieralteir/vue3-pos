@@ -14,25 +14,25 @@ const { items, removeItem, incrementItemQty, decrementItemQty } = useCart();
       <p class="font-bold">{{ $filters.uppercase(item.name) }}</p>
       <div class="flex gap-3 items-center justify-center">
         <button
-          class="bg-gray-100 p-2 w-9 h-9 rounded-md"
+          class="inline-flex items-center justify-center bg-gray-100 p-2 w-8 h-8 rounded-md"
           @click="removeItem(item)"
           v-if="item.quantity === 1"
         >
-          -
+          <span class="fa fa-minus" />
         </button>
         <button
-          class="bg-gray-100 p-2 w-9 h-9 rounded-md"
+          class="inline-flex items-center justify-center bg-gray-100 p-2 w-8 h-8 rounded-md"
           @click="decrementItemQty(item)"
           v-else
         >
-          -
+          <span class="fa fa-minus" />
         </button>
         <p>{{ item.quantity }}</p>
         <button
-          class="bg-gray-100 p-2 w-9 h-9 rounded-md"
+          class="inline-flex items-center justify-center bg-gray-100 p-2 w-8 h-8 rounded-md"
           @click="incrementItemQty(item)"
         >
-          +
+          <span class="fa fa-plus" />
         </button>
       </div>
       <p class="font-bold text-gray-400 text-right">
