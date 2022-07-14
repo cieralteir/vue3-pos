@@ -1,43 +1,24 @@
 <script setup>
 import { useCart } from "@/composables/cart";
+import OrderListItem from "@/components/Order/OrderListItem.vue";
 
-const { items, removeItem, incrementItemQty, decrementItemQty } = useCart();
+const { items, total } = useCart();
 </script>
 
 <template>
-  <div class="flex flex-col gap-5">
-    <div
-      class="grid grid-cols-3 items-center w-full text-sm"
-      v-for="item in items"
-      :key="item.id"
-    >
-      <p class="font-bold">{{ $filters.uppercase(item.name) }}</p>
-      <div class="flex gap-3 items-center justify-center">
-        <button
-          class="inline-flex items-center justify-center bg-gray-100 p-2 w-8 h-8 rounded-md"
-          @click="removeItem(item)"
-          v-if="item.quantity === 1"
-        >
-          <span class="fa fa-minus" />
-        </button>
-        <button
-          class="inline-flex items-center justify-center bg-gray-100 p-2 w-8 h-8 rounded-md"
-          @click="decrementItemQty(item)"
-          v-else
-        >
-          <span class="fa fa-minus" />
-        </button>
-        <p>{{ item.quantity }}</p>
-        <button
-          class="inline-flex items-center justify-center bg-gray-100 p-2 w-8 h-8 rounded-md"
-          @click="incrementItemQty(item)"
-        >
-          <span class="fa fa-plus" />
-        </button>
+  <div class="flex flex-col h-full">
+    <h2 class="font-bold text-2xl mb-5">ORDERS</h2>
+    <div class="grow flex">
+      <div class="flex flex-col gap-5 w-full" v-if="items.length">
+        <OrderListItem :item="item" v-for="item in items" :key="item.id" />
       </div>
-      <p class="font-bold text-gray-400 text-right">
-        {{ $filters.currency(item.price * item.quantity) }}
-      </p>
+      <div class="flex flex-col items-center justify-center w-full" v-else>
+        <i class="fa fa-basket-shopping text-gray-300 text-7xl mb-2" />
+        <span class="text-gray-300 font-extralight">No Orders Yet</span>
+      </div>
     </div>
+    <button class="w-full bg-gray-800 text-white p-3 rounded-md">
+      CHARGE <span class="font-thin">{{ $filters.currency(total) }}</span>
+    </button>
   </div>
 </template>

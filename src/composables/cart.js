@@ -1,6 +1,12 @@
-import { reactive, readonly } from "vue";
+import { computed, reactive, readonly } from "vue";
 
 const items = reactive([]);
+const total = computed(() =>
+  items.reduce((acc, v) => {
+    acc += v.price * v.quantity;
+    return acc;
+  }, 0)
+);
 
 export function useCart() {
   const addItem = (item) => {
@@ -34,6 +40,7 @@ export function useCart() {
   };
   return {
     items: readonly(items),
+    total: readonly(total),
     addItem,
     removeItem,
     incrementItemQty,
